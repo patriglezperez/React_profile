@@ -1,6 +1,6 @@
 
 *{
-    font-family:Arial, Helvetica, sans-serif
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .container-profile{
@@ -65,6 +65,7 @@
     border-style: solid;
     border-color: #dcdcdc;
     border-width: 1px;
+    line-height:20px;
 }
     .text {
         font-weight: bold;
@@ -75,8 +76,11 @@
     .value {
         align-items: left;
         width: 200px;
+        
     }
- 
+    p.value:nth-child(1) { 
+        color:pink
+    }
 .page-distribution{
     display: flex;
     flex-direction: row;

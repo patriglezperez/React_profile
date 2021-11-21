@@ -4,7 +4,9 @@ import './style.css';
 
 let basicInfo = { fullname: 'Cathy Chu', user: 'cchu01', source: 'https://cdn-images.livecareer.es/pages/foto_cv_lc_es_7.jpg', email: 'cchu@myschool.edu', id: 'Add Student ID', password: 'Change password', background: 'https://static.vecteezy.com/system/resources/previews/001/888/309/non_2x/light-green-yellow-modern-blurred-backdrop-vector.jpg' }
 
-let systemSetting = { language: 'English (United States)', privacy: 'Only adminitrators and other instructors can view my profile information', notifications: 'Stream notifications' }
+let systemSetting = { language: 'English (United States)', privacy: 'Only adminitrators and other instructors can view my profile information', notifications:['Stream notifications', 'Email notifications', 'Push notifications']}
+
+let additionalInfo = {gender: 'Add gender'}
 
 let information1 = {
   title: "Basic Information",
@@ -21,10 +23,14 @@ let information2 = {
   elements: [
     { textname: "Language", value: systemSetting.language },
     { textname: "Privacy Settings", value: systemSetting.privacy },
-    { textname: "Global Notifications Settings", value: systemSetting.notifications },
+    { textname: "Global Notifications Settings", value: systemSetting.notifications},
   ]
 }
 
+let information3 = {
+  title: "Aditional information",
+  elements: [{textname: "Gender", value: additionalInfo.gender}]
+}
 class Item extends React.Component {
   render (){
     return <>
@@ -52,7 +58,7 @@ class Info extends React.Component {
 class Profile extends React.Component {
     constructor(props){
       super(props)
-      this.state= { user:this.props.basicInfo, information1: this.props.information1, information2: this.props.information2 }
+      this.state= { user:this.props.basicInfo, information1: this.props.information1, information2: this.props.information2, information3: this.props.information3}
     }
     render() {
       
@@ -66,9 +72,14 @@ class Profile extends React.Component {
       <p class='fullname'>{this.props.user.fullname}</p>
       <p class='username'>{this.props.user.user}</p>
       </div> 
-      <div className='page-distribution' >
-      <Info title={this.state.information1.title} data={this.state.information1.elements} />
-      <Info title={this.state.information2.title} data={this.state.information2.elements} />
+      <div className='page-distribution'>
+        <div className='distribution-left' >
+          <Info title={this.state.information1.title} data={this.state.information1.elements} />
+          <Info title={this.state.information3.title} data={this.state.information3.elements} />
+        </div>
+        <div className='distribution-right'>
+          <Info title={this.state.information2.title} data={this.state.information2.elements} />
+        </div>
       </div>
     </div>
     }
@@ -78,7 +89,7 @@ function Html(){
   return (
   <div className='background'>
     <div>
-      <Profile user={basicInfo} information1={information1} information2={information2} />
+      <Profile user={basicInfo} information1={information1} information2={information2} information3={information3}/>
     </div>
   </div>
   )
