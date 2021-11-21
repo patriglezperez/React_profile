@@ -23,7 +23,7 @@ let information2 = {
   elements: [
     { textname: "Language", value: systemSetting.language },
     { textname: "Privacy Settings", value: systemSetting.privacy },
-    { textname: "Global Notifications Settings", value: systemSetting.notifications},
+    { textname: "Global Notifications Settings", array: true, array0: systemSetting.notifications[0],array1: systemSetting.notifications[1] , array2: systemSetting.notifications[2]},
   ]
 }
 
@@ -33,19 +33,33 @@ let information3 = {
 }
 class Item extends React.Component {
   render (){
-    return <>
-    <div className='item'>
-        <p  className="text" >{this.props.textname}</p>
+    const array = this.props.array
+    if (array === true) {
+      return <>
+      <div className='item_array'>
+        <p className="text" >{this.props.textname}</p>
+        <div className='div_array'>
+          <p className="array">{this.props.array0}</p>
+          <p className="array">{this.props.array1}</p>
+          <p className="array">{this.props.array2}</p>
+        </div>
+      </div>
+      </>
+    } else {
+      return <>
+      <div className='item'>
+        <p className="text" >{this.props.textname}</p>
         <p className="value">{this.props.value}</p>
-    </div>
-    </>
+      </div>
+      </>
+      }
   }
 }
 
 class Info extends React.Component {
   render(){
     let newData = this.props.data.map(element => {
-    return <Item textname={element.textname} value={element.value}/>
+    return <Item textname={element.textname} value={element.value} array={element.array} array0={element.array0} array1={element.array1} array2={element.array2}/>
     })
 
     return <div className='section'>
