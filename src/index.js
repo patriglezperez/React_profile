@@ -4,9 +4,9 @@ import './style.css';
 
 let basicInfo = { fullname: 'Cathy Chu', user: 'cchu01', source: 'https://cdn-images.livecareer.es/pages/foto_cv_lc_es_7.jpg', email: 'cchu@myschool.edu', id: 'Add Student ID', password: 'Change password', background: 'https://static.vecteezy.com/system/resources/previews/001/888/309/non_2x/light-green-yellow-modern-blurred-backdrop-vector.jpg' }
 
-let systemSetting = { language: 'English (United States)', privacy: 'Only adminitrators and other instructors can view my profile information', notifications:['Stream notifications', 'Email notifications', 'Push notifications']}
+let systemSetting = { language: 'English (United States)', privacy: 'Only adminitrators and other instructors can view my profile information', notifications: ['Stream notifications', 'Email notifications', 'Push notifications'] }
 
-let additionalInfo = {gender: 'Add gender'}
+let additionalInfo = { gender: 'Add gender' }
 
 let information1 = {
   title: "Basic Information",
@@ -23,69 +23,69 @@ let information2 = {
   elements: [
     { textname: "Language", value: systemSetting.language },
     { textname: "Privacy Settings", value: systemSetting.privacy },
-    { textname: "Global Notifications Settings", array: true, array0: systemSetting.notifications[0],array1: systemSetting.notifications[1] , array2: systemSetting.notifications[2]},
+    { textname: "Global Notifications Settings", array: true, array0: systemSetting.notifications[0], array1: systemSetting.notifications[1], array2: systemSetting.notifications[2] },
   ]
 }
 
 let information3 = {
   title: "Aditional information",
-  elements: [{textname: "Gender", value: additionalInfo.gender}]
+  elements: [{ textname: "Gender", value: additionalInfo.gender }]
 }
 class Item extends React.Component {
-  render (){
+  render() {
     const array = this.props.array
     if (array === true) {
       return <>
-      <div className='item_array'>
-        <p className="text" >{this.props.textname}</p>
-        <div className='div_array'>
-          <p className="array">{this.props.array0}</p>
-          <p className="array">{this.props.array1}</p>
-          <p className="array">{this.props.array2}</p>
+        <div className='item_array'>
+          <p className="text" >{this.props.textname}</p>
+          <div className='div_array'>
+            <p className="array">{this.props.array0}</p>
+            <p className="array">{this.props.array1}</p>
+            <p className="array">{this.props.array2}</p>
+          </div>
         </div>
-      </div>
       </>
     } else {
       return <>
-      <div className='item'>
-        <p className="text" >{this.props.textname}</p>
-        <p className="value">{this.props.value}</p>
-      </div>
+        <div className='item'>
+          <p className="text" >{this.props.textname}</p>
+          <p className="value">{this.props.value}</p>
+        </div>
       </>
-      }
+    }
   }
 }
 
 class Info extends React.Component {
-  render(){
-    let newData = this.props.data.map(element => {
-    return <Item textname={element.textname} value={element.value} array={element.array} array0={element.array0} array1={element.array1} array2={element.array2}/>
-    })
+  render() {
+
 
     return <div className='section'>
       <p className='title-section'>{this.props.title}</p>
-      {newData}
+      {this.props.data.map(element => {
+        return <Item textname={element.textname} value={element.value} array={element.array} array0={element.array0} array1={element.array1} array2={element.array2} />
+      })}
     </div>
   }
 }
 
 class Profile extends React.Component {
-    constructor(props){
-      super(props)
-      this.state= { user:this.props.basicInfo, information1: this.props.information1, information2: this.props.information2, information3: this.props.information3}
-    }
-    render() {
-      
+  constructor(props) {
+    super(props)
+    this.state = { user: this.props.basicInfo, information1: this.props.information1, information2: this.props.information2, information3: this.props.information3 }
+  }
+  render() {
+
     return <div className="container-profile">
 
-      <img className="background-top" src={this.props.user.background} alt='background image'/>
-      
+      <img className="background-top" src={this.props.user.background} alt='background image' />
+
       <div className="container-my-info">
-      <a href="/"></a>
-      <img className="pic-profile" src={this.props.user.source} alt="picture" />
-      <p class='fullname'>{this.props.user.fullname}</p>
-      <p class='username'>{this.props.user.user}</p>
-      </div> 
+        <a href="/"></a>
+        <img className="pic-profile" src={this.props.user.source} alt="picture" />
+        <p class='fullname'>{this.props.user.fullname}</p>
+        <p class='username'>{this.props.user.user}</p>
+      </div>
       <div className='page-distribution'>
         <div className='distribution-left' >
           <Info title={this.state.information1.title} data={this.state.information1.elements} />
@@ -96,16 +96,16 @@ class Profile extends React.Component {
         </div>
       </div>
     </div>
-    }
-  } 
+  }
+}
 
-function Html(){
+function Html() {
   return (
-  <div className='background'>
-    <div>
-      <Profile user={basicInfo} information1={information1} information2={information2} information3={information3}/>
+    <div className='background'>
+      <div>
+        <Profile user={basicInfo} information1={information1} information2={information2} information3={information3} />
+      </div>
     </div>
-  </div>
   )
 }
 
