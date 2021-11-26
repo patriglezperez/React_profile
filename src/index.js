@@ -90,6 +90,7 @@ class Info extends React.Component {
 
 
     this.setState(() => { this.state.data[0].value = value })
+    this.props.onChange(value)
   }
   render() {
 
@@ -109,8 +110,11 @@ class Profile extends React.Component {
   constructor(props) {
     super(props)
     this.state = { user: this.props.basicInfo, information1: this.props.information1, information2: this.props.information2, information3: this.props.information3 }
+    this.handleChange = this.handleChange.bind(this)
   }
-
+  handleChange(value) {
+    this.setState(() => { this.state.information1.elements[0].value = value })
+  }
   render() {
 
     return <div className="container-profile">
@@ -125,7 +129,7 @@ class Profile extends React.Component {
       </div>
       <div className='page-distribution'>
         <div className='distribution-left' >
-          <Info title={this.state.information1.title} data={this.state.information1.elements} />
+          <Info title={this.state.information1.title} data={this.state.information1.elements} onChange={this.handleChange} />
           <Info title={this.state.information3.title} data={this.state.information3.elements} />
         </div>
         <div className='distribution-right'>
