@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
+
+
 // import img from '../assets/icons.svg';
 let basicInfo = { fullname: 'Cathy Chu', user: 'cchu01', source: 'https://cdn-images.livecareer.es/pages/foto_cv_lc_es_7.jpg', email: 'cchu@myschool.edu', id: 'Add Student ID', password: 'Change password', background: 'https://static.vecteezy.com/system/resources/previews/001/888/309/non_2x/light-green-yellow-modern-blurred-backdrop-vector.jpg' }
 
@@ -46,7 +48,7 @@ class Item extends React.Component {
   handleChange(event) {
     this.setState(() => ({ value: event.target.value }));
     this.props.onChange(event.target.value);
-    //esto es una preueba
+
   }
   render() {
     if (Array.isArray(this.props.value)) {
@@ -87,6 +89,8 @@ class Info extends React.Component {
   }
 
   handleChange(value) {
+
+
     this.setState(() => { this.state.data[0].value = value })
     this.props.onChange(value)
   }
