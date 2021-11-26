@@ -33,6 +33,48 @@ let information3 = {
   title: "Aditional information",
   elements: [{ id: 1, textname: "Gender", value: additionalInfo.gender }]
 }
+
+
+class User extends React.Component {
+  constructor(props){
+    super(props)
+    this.state= {...this.props.user}
+    
+  }
+  render() {
+    return <div>
+      <div className='top' >
+        <div className='blue'>
+          <div className='margin'>
+            <img className='image' src={this.state.source}/>
+          </div>
+          <div className='data'>
+            <p className='name'>{this.state.name}</p>
+            <p>{this.state.email}</p>
+            <p>{this.state.telephone}</p>
+          </div>
+        </div> 
+      </div>
+      <div className='white' >
+        <ul className='bottom'>
+          <div className='styleLi'>
+            <li className='purple'>{this.state.devicesUsed}</li>
+          </div>
+          <div className='styleLi'>
+            <li className='red'>{this.state.location}</li>
+          </div>
+          <div className='styleLi'>
+            <li className='lightblue'>{this.state.facebook}</li>
+          </div>
+        </ul>
+        <div className='amount'>
+          <p>{this.state.totalAmount}</p> 
+        </div>
+      </div>
+    </div>
+  }
+} 
+
 class Item extends React.Component {
   constructor(props) {
     super(props)
