@@ -89,14 +89,10 @@ class Info extends React.Component {
   }
 
   handleChange(value) {
-
-
     this.setState(() => { this.state.data[0].value = value })
     this.props.onChange(value)
   }
   render() {
-
-
     return <div className='section'>
       <p className='title-section'>{this.props.title}</p>
       {this.state.data.map(element => {
