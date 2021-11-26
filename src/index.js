@@ -44,7 +44,8 @@ class Item extends React.Component {
 
   }
   handleChange(event) {
-    this.setState(() => ({ value: event.target.value }))
+    this.setState(() => ({ value: event.target.value }));
+    this.props.onChange(event.target.value);
 
   }
   render() {
@@ -78,14 +79,26 @@ class Item extends React.Component {
   }
 }
 class Info extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { data: props.data }
+    this.handleChange = this.handleChange.bind(this)
+
+  }
+
+  handleChange(value) {
+
+
+    this.setState(() => { this.state.data[0].value = value })
+  }
   render() {
 
 
     return <div className='section'>
       <p className='title-section'>{this.props.title}</p>
-      {this.props.data.map(element => {
+      {this.state.data.map(element => {
 
-        return <Item key={element.id} id={element.id} textname={element.textname} value={element.value} isEditable={element.isEditable} />
+        return <Item key={element.id} id={element.id} textname={element.textname} value={element.value} isEditable={element.isEditable} onChange={this.handleChange} />
 
       })}
     </div>
@@ -97,6 +110,7 @@ class Profile extends React.Component {
     super(props)
     this.state = { user: this.props.basicInfo, information1: this.props.information1, information2: this.props.information2, information3: this.props.information3 }
   }
+
   render() {
 
     return <div className="container-profile">
