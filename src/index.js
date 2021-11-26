@@ -46,7 +46,7 @@ class Item extends React.Component {
   handleChange(event) {
     this.setState(() => ({ value: event.target.value }));
     this.props.onChange(event.target.value);
-
+    //esto es una preueba
   }
   render() {
     if (Array.isArray(this.props.value)) {
@@ -87,8 +87,6 @@ class Info extends React.Component {
   }
 
   handleChange(value) {
-
-
     this.setState(() => { this.state.data[0].value = value })
   }
   render() {
