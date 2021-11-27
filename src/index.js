@@ -37,7 +37,7 @@ let information3 = {
 class User extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { ...this.props.basicInfo }
+    this.state = { ...this.props.user }
 
   }
   render() {
