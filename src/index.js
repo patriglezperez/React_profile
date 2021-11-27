@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
-
+import axios from 'axios'
 
 // import img from '../assets/icons.svg';
-let basicInfo = { fullname: 'Cathy Chu', user: 'cchu01', source: 'https://cdn-images.livecareer.es/pages/foto_cv_lc_es_7.jpg', email: 'cchu@myschool.edu', id: 'Add Student ID', password: 'Change password', background: 'https://static.vecteezy.com/system/resources/previews/001/888/309/non_2x/light-green-yellow-modern-blurred-backdrop-vector.jpg' }
+let basicInfo = { fullname: 'Cathy Chu', user: 'cchu01', source: 'https://cdn-images.livecareer.es/pages/foto_cv_lc_es_7.jpg', email: 'cchu@myschool.edu', id: 'Add Student ID', password: 'Change password', background: 'https://static.vecteezy.com/system/resources/previews/001/888/309/non_2x/light-green-yellow-modern-blurred-backdrop-vector.jpg', telephone: '665487159', devicesUsed:'Devices User - Mobile', location: 'Location - San Francisco, USA', facebook:'Facebook Profile', totalAmount: 'Total Amount Spent $ 2,314'}
 
 let systemSetting = { language: 'English (United States)', privacy: 'Only adminitrators and other instructors can view my profile information', notifications: ['Stream notifications', 'Email notifications', 'Push notifications'] }
 
@@ -34,7 +34,6 @@ let information3 = {
   elements: [{ id: 1, textname: "Gender", value: additionalInfo.gender }]
 }
 
-
 class User extends React.Component {
   constructor(props){
     super(props)
@@ -42,14 +41,22 @@ class User extends React.Component {
     
   }
   render() {
-    return <div>
+    function hide(){
+    const container = document.querySelector('.container');
+    const profile = document.querySelector('.container-profile');
+
+    container.classList.add('display');
+    profile.classList.remove('display');
+    }
+
+    return <div className='container' onClick={hide}>
       <div className='top' >
         <div className='blue'>
           <div className='margin'>
             <img className='image' src={this.state.source}/>
           </div>
           <div className='data'>
-            <p className='name'>{this.state.name}</p>
+            <p className='name'>{this.state.fullname}</p>
             <p>{this.state.email}</p>
             <p>{this.state.telephone}</p>
           </div>
@@ -122,6 +129,9 @@ class Item extends React.Component {
     }
   }
 }
+
+
+
 class Info extends React.Component {
   constructor(props) {
     super(props)
@@ -136,8 +146,8 @@ class Info extends React.Component {
     this.setState(() => { this.state.data[0].value = value })
     this.props.onChange(value)
   }
-  render() {
 
+  render() {
 
     return <div className='section'>
       <p className='title-section'>{this.props.title}</p>
@@ -161,7 +171,7 @@ class Profile extends React.Component {
   }
   render() {
 
-    return <div className="container-profile">
+    return <div className="container-profile display" >
 
       <img className="background-top" src={this.props.user.background} alt='background image' />
 
@@ -184,10 +194,13 @@ class Profile extends React.Component {
   }
 }
 
+
 function Html() {
+  
   return (
     <div className='background'>
-      <div>
+      <div >
+        <User user={basicInfo} />
         <Profile user={basicInfo} information1={information1} information2={information2} information3={information3} />
       </div>
     </div>
