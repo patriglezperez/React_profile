@@ -39,7 +39,7 @@ export class Item extends React.Component {
                         {this.state.noIsEditable ?
                             <p className="value">{this.state.value}</p>
                             :
-                            <input type='text' onChange={this.handleChange} />
+                            <input className="value" type='text' onChange={this.handleChange} />
                         }
                         {this.state.isEditable ? <img src={img} alt="edit" className='edit' onClick={this.handleClick} /> : null}
                     </div>

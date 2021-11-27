@@ -225,6 +225,13 @@ li {
     width: 200px;
 }
 
+.item div {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    width: 50%;
+}
+
 .value {
     margin-left: 20px;
     width: 200px;
