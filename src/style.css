@@ -13,6 +13,123 @@ body {
 }
 
 
+/**user ******/
+.blue{
+    margin-top: 100px;
+    background-color:#7798ff;
+    width: 400px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px 15px 0px 0px;
+}
+.margin{
+    margin-top: -140px;
+}
+.image{
+    margin-top: 50px;
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: white;
+    border-width: 6px;
+    box-shadow: 0px 8px 19px 4px rgba(63,97,207,0.8);
+}
+
+.data{
+    color: aliceblue;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    .data p{
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+.name{
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.bottom{
+    margin-top: 0px;
+    border-radius: 15px;
+    color: #5a5a5a;
+    padding-top: 20px;
+    font-size: 18px;
+    justify-content: left;
+}
+
+.white{
+    background-color:white;
+    width: 400px;
+    height: 250px;
+    border-radius: 0px 0px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+}
+ul{
+    list-style: none;
+    margin-bottom: 0px;
+}
+li {
+    margin-bottom: 20px;
+}
+    .styleLi{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+  
+.purple::before {
+    content: "\2022";
+    color: #bf8bca;
+    margin-right: 5px;
+    font-size: 30px;
+}
+
+.red::before {
+    content: "\2022";
+    color: #f47973;
+    margin-right: 5px;
+    font-size: 30px;
+}
+.lightblue::before {
+    content: "\2022";
+    color: #7296ff;
+    margin-right: 5px;
+    font-size: 30px;
+}
+
+.amount{
+    color: #a3a8ab;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.container {
+    margin:0 auto;
+    text-align: center;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+
+/****/
 .edit {
     width: 20px;
     height: 20px;
@@ -118,4 +235,8 @@ body {
     flex-direction: row;
     width: 100%;
     justify-content: center;
+}
+
+.display{
+    display:none
 }
