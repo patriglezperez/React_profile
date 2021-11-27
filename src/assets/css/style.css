@@ -14,9 +14,9 @@ body {
 
 
 /**user ******/
-.blue{
+.blue {
     margin-top: 100px;
-    background-color:#7798ff;
+    background-color: #7798ff;
     width: 400px;
     height: 240px;
     display: flex;
@@ -25,10 +25,12 @@ body {
     justify-content: center;
     border-radius: 15px 15px 0px 0px;
 }
-.margin{
+
+.margin {
     margin-top: -140px;
 }
-.image{
+
+.image {
     margin-top: 50px;
     height: 110px;
     width: 110px;
@@ -36,10 +38,10 @@ body {
     border-style: solid;
     border-color: white;
     border-width: 6px;
-    box-shadow: 0px 8px 19px 4px rgba(63,97,207,0.8);
+    box-shadow: 0px 8px 19px 4px rgba(63, 97, 207, 0.8);
 }
 
-.data{
+.data {
     color: aliceblue;
     font-size: 15px;
     letter-spacing: 1px;
@@ -48,11 +50,13 @@ body {
     align-items: center;
     justify-content: center;
 }
-    .data p{
-        margin-top: 5px;
-        margin-bottom: 0px;
-    }
-.name{
+
+.data p {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.name {
     font-weight: bold;
     font-size: 20px;
     letter-spacing: 1px;
@@ -60,7 +64,7 @@ body {
     padding-bottom: 10px;
 }
 
-.bottom{
+.bottom {
     margin-top: 0px;
     border-radius: 15px;
     color: #5a5a5a;
@@ -69,8 +73,8 @@ body {
     justify-content: left;
 }
 
-.white{
-    background-color:white;
+.white {
+    background-color: white;
     width: 400px;
     height: 250px;
     border-radius: 0px 0px 15px 15px;
@@ -79,19 +83,22 @@ body {
     justify-content: left;
     align-items: center;
 }
-ul{
+
+ul {
     list-style: none;
     margin-bottom: 0px;
 }
+
 li {
     margin-bottom: 20px;
 }
-    .styleLi{
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-    }
-  
+
+.styleLi {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
 .purple::before {
     content: "\2022";
     color: #bf8bca;
@@ -105,6 +112,7 @@ li {
     margin-right: 5px;
     font-size: 30px;
 }
+
 .lightblue::before {
     content: "\2022";
     color: #7296ff;
@@ -112,20 +120,20 @@ li {
     font-size: 30px;
 }
 
-.amount{
+.amount {
     color: #a3a8ab;
     font-weight: bold;
     font-size: 20px;
 }
 
 .container {
-    margin:0 auto;
+    margin: 0 auto;
     text-align: center;
-    width:100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
 
@@ -237,6 +245,6 @@ li {
     justify-content: center;
 }
 
-.display{
-    display:none
+.display {
+    display: none
 }
