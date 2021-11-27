@@ -48,7 +48,7 @@ class User extends React.Component {
     container.classList.add('display');
     profile.classList.remove('display');
     }
-
+    //test
     return <div className='container' onClick={hide}>
       <div className='top' >
         <div className='blue'>
