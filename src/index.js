@@ -36,24 +36,24 @@ let information3 = {
 
 
 class User extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-    this.state= {...this.props.user}
-    
+    this.state = { ...this.props.basicInfo }
+
   }
   render() {
     return <div>
       <div className='top' >
         <div className='blue'>
           <div className='margin'>
-            <img className='image' src={this.state.source}/>
+            <img className='image' src={this.state.source} />
           </div>
           <div className='data'>
-            <p className='name'>{this.state.name}</p>
+            <p className='name'>{this.state.fullname}</p>
             <p>{this.state.email}</p>
             <p>{this.state.telephone}</p>
           </div>
-        </div> 
+        </div>
       </div>
       <div className='white' >
         <ul className='bottom'>
@@ -68,12 +68,12 @@ class User extends React.Component {
           </div>
         </ul>
         <div className='amount'>
-          <p>{this.state.totalAmount}</p> 
+          <p>{this.state.totalAmount}</p>
         </div>
       </div>
     </div>
   }
-} 
+}
 
 class Item extends React.Component {
   constructor(props) {
